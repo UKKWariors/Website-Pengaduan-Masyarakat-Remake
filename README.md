@@ -10,8 +10,8 @@
 # Status
 | Nama | Status |
 | --- | --- |
-| CodeQL | [![CodeQL](https://github.com/UKKWariors/Website-Pengaduan-Masyarakat-Remake/actions/workflows/codeql.yml/badge.svg)](https://github.com/UKKWariors/Website-Pengaduan-Masyarakat/actions/workflows/codeql.yml) |
-| Dependency Review | [![Dependency Review](https://github.com/UKKWariors/Website-Pengaduan-Masyarakat-Remake/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/UKKWariors/Website-Pengaduan-Masyarakat/actions/workflows/dependency-review.yml) |
+| CodeQL | [![CodeQL](https://github.com/UKKWariors/Website-Pengaduan-Masyarakat-Remake/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/UKKWariors/Website-Pengaduan-Masyarakat/actions/workflows/codeql.yml) |
+| Dependency Review | [![Dependency Review](https://github.com/UKKWariors/Website-Pengaduan-Masyarakat-Remake/actions/workflows/dependency-review.yml/badge.svg?branch=main)](https://github.com/UKKWariors/Website-Pengaduan-Masyarakat/actions/workflows/dependency-review.yml) |
 
 # Projects UKK RPL
 Disini tempatnya projects UKK tentang `Pembuatan Website Pengaduan Masyarakat` buat tahun ini ╮⁠(⁠.⁠ ⁠❛⁠ ⁠ᴗ⁠ ⁠❛⁠.⁠)⁠╭
