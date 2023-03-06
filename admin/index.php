@@ -238,30 +238,6 @@
 </html>
 
 
-    <!-- <div class="row">
-      <div class="col s12 m3">
-          <ul id="slide-out" class="sidenav sidenav-fixed">
-              <li>
-                  <div class="user-view">
-					  <a href="#name"><span class="blue-text name"><?php echo ucwords($_SESSION['data']['nama_petugas']); ?></a>
-                  </div>
-              </li>
-              <li><a href="index.php?p=dashboard">Dashboard</a></li>
-              <li><a href="index.php?p=registrasi">Registrasi</a></li>
-              <li><a href="index.php?p=pengaduan">Pengaduan</a></li>
-              <li><a href="index.php?p=respon">Respon</a></li>
-              <li><a href="index.php?p=user">User</a></li>
-              <li><a href="index.php?p=laporan">Laporan</a></li>
-              <li>
-                  <div class="divider"></div>
-              </li>
-              <li><a class="waves-effect" href="../logout.php">Logout</a></li>
-          </ul>
-
-          <a href="#" data-target="slide-out" class="btn sidenav-trigger"><i class="material-icons">menu</i></a>
-      </div> -->
-
-
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="../js/materialize.min.js"></script>
       <script type="text/javascript" src="../js/materialize.min.js"></script>
