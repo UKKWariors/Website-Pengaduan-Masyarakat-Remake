@@ -1,7 +1,4 @@
-
-<h3 class="orange-text">Dahsboard</h3>
-
-	<div class="row">
+<div class="row">
 		<div class="col s4">
 		  <div class="card red">
 		    <div class="card-content white-text">

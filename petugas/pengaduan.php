@@ -1,10 +1,4 @@
-        <div class="row">
-          <div class="col s12 m9">
-            <h3 class="orange-text">Pengaduan</h3>
-          </div>
-        </div>
-
-        <table id="example" class="display responsive-table" style="width:100%">
+<table id="example" class="display responsive-table" style="width:100%">
           <thead>
               <tr>
 				<th>No</th>
