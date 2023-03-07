@@ -81,12 +81,12 @@
         </ul>
       </li>
       <li>
-          <a href="index.php?p=laporan">
+          <a href="index.php?p=pengaduan">
             <i class='bx bxs-report' ></i>
             <span class="link_name">Laporan</span>
           </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="index.php?p=laporan">Laporan</a></li>
+          <li><a class="link_name" href="index.php?p=pengaduan">Laporan</a></li>
 		</ul>
       </li>
       <li>
@@ -169,7 +169,7 @@
 		elseif(@$_GET['p']=="mas_hapus"){
 			$query = mysqli_query($koneksi,"DELETE FROM masyarakat WHERE nik='".$_GET['nik']."'");
 			if($query){
-        header('Location: index.php?p=mas');
+        header('location:index.php?p=mas');
 			}
 		}
 		elseif(@$_GET['p']=="pengaduan"){
@@ -236,7 +236,6 @@
   
 </body>
 </html>
-
 
       <!--JavaScript at end of body for optimized loading-->
       <script type="text/javascript" src="../js/materialize.min.js"></script>
