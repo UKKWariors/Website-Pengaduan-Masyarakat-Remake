@@ -50,6 +50,14 @@
 				<p><?php echo $r['isi_laporan']; ?></p>
 				<br><b>Respon</b>
 				<p><?php echo $r['tanggapan']; ?></p>
+				<br><b>Bukti</b><br>
+				<?php 
+					if($r['bukti']=="kosong"){ ?>
+						<img src="../img/noImage.png" width="100">
+				<?php	}else{ ?>
+					<img width="100" src="../img/<?php echo $r['bukti']; ?>">
+				<?php }
+				 ?>
             </div>
 
           </div>
