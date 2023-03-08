@@ -46,11 +46,15 @@
             <?php 
             	if($r['status']=="proses"){ ?>
 	            <div class="col s12 m6">
-					<form method="POST">
+					<form method="POST" enctype="multipart/form-data">
 						<div class="col s12 input-field">
 							<label for="textarea">Tanggapan</label>
 							<textarea id="textarea" name="tanggapan" class="materialize-textarea"></textarea>
 						</div>
+						<div class="input-box">
+            				<label for="bukti">Bukti</label>
+							<input type="file" name="bukti">
+        				</div>
 						<div class="col s12 input-field">
 							<input type="submit" name="tanggapi" value="Kirim" class="btn right">
 						</div>
@@ -62,16 +66,51 @@
 			<?php 
 				if(isset($_POST['tanggapi'])){
 					$tgl = date('Y-m-d');
-					$query = mysqli_query($koneksi,"INSERT INTO tanggapan VALUES (NULL,'".$r['id_pengaduan']."','".$tgl."','".$_POST['tanggapan']."','".$_SESSION['data']['id_petugas']."')");
-					if($query){
-						$update=mysqli_query($koneksi,"UPDATE pengaduan SET status='selesai' WHERE id_pengaduan='".$r['id_pengaduan']."'");
-						if($update){
-							echo "<script>alert('Tanggapan Terkirim')</script>";
-							echo "<script>location='index.php?p=pengaduan';</script>";
+
+					$bukti = $_FILES['bukti']['name'];
+					$source = $_FILES['bukti']['tmp_name'];
+					$folder = './../img/';
+					$listeks = array('jpg','png','jpeg');
+					$pecah = explode('.', $bukti);
+					$eks = $pecah['1'];
+					$size = $_FILES['bukti']['size'];
+					$namabukti = date('dmYis').$bukti;
+
+					if($bukti !=""){
+						if(in_array($eks, $listeks)){
+							if($size<=100000){
+								move_uploaded_file($source, $folder.$namabukti);
+								$query = mysqli_query($koneksi,"INSERT INTO tanggapan VALUES (NULL,'".$r['id_pengaduan']."','".$tgl."','".$_POST['tanggapan']."','$namabukti','".$_SESSION['data']['id_petugas']."')");
+
+								if($query){
+									$update=mysqli_query($koneksi,"UPDATE pengaduan SET status='selesai' WHERE id_pengaduan='".$r['id_pengaduan']."'");
+									if($update){
+										echo "<script>alert('Tanggapan Terkirim')</script>";
+										echo "<script>location='index.php?p=pengaduan';</script>";
+									}
+								}
+
+							}
+							else{
+								echo "<script>alert('Akuran Gambar Tidak Lebih Dari 100KB')</script>";
+							}
+						}
+						else{
+							echo "<script>alert('Format File Tidak Di Dukung')</script>";
+						}
+					}
+					else{
+						$query = mysqli_query($koneksi,"INSERT INTO tanggapan VALUES (NULL,'".$r['id_pengaduan']."','".$tgl."','".$_POST['tanggapan']."','noImage.png','".$_SESSION['data']['id_petugas']."')");
+						if($query){
+							$update=mysqli_query($koneksi,"UPDATE pengaduan SET status='selesai' WHERE id_pengaduan='".$r['id_pengaduan']."'");
+							if($update){
+								echo "<script>alert('Tanggapan Terkirim')</script>";
+								echo "<script>location='index.php?p=pengaduan';</script>";
+							}
 						}
 					}
 				}
-			 ?>
+			?>
           </div>
           <div class="modal-footer col s12">
             <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
