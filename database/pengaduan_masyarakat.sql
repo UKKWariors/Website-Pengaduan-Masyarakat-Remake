@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2023 at 10:58 AM
+-- Generation Time: Mar 09, 2023 at 08:26 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -33,17 +33,20 @@ CREATE TABLE `masyarakat` (
   `nama` varchar(35) NOT NULL,
   `username` varchar(25) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `telp` varchar(13) NOT NULL
+  `telp` varchar(13) NOT NULL,
+  `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `masyarakat`
 --
 
-INSERT INTO `masyarakat` (`nik`, `email`, `nama`, `username`, `password`, `telp`) VALUES
-('1231231231231231', 'mad@gmail.com', 'Mad', 'mad', '7538ebc37ad0917853e044b9b42bd8a4', '081234567891'),
-('1376012310010005', 'aman@gmail.com', 'Aqil Rahman', 'masyarakat', 'd9a8c6c010a37fdc9850fe6d8c064880', '085364287180'),
-('2727273819372839', 'samid@gmail.com', 'Samid', 'samid', '183302b157a276e7304caab75d9f45d2', '085964357965');
+INSERT INTO `masyarakat` (`nik`, `email`, `nama`, `username`, `password`, `telp`, `status`) VALUES
+('1231231231231231', 'mad@gmail.com', 'Mad', 'mad', '7538ebc37ad0917853e044b9b42bd8a4', '081234567891', 1),
+('1376012310010005', 'aman@gmail.com', 'Aqil Rahman', 'masyarakat', 'd9a8c6c010a37fdc9850fe6d8c064880', '085364287180', 1),
+('1421453264321642', 'bawahtangga4@gmail.com', 'Samid', 'dimas', '5a45b824c7b7803660b77dea0e1dacd2', '082301826966', 1),
+('2727273819372839', 'samid@gmail.com', 'Samid', 'samid', '183302b157a276e7304caab75d9f45d2', '085964357965', 1),
+('4615263849271263', 'mad@gmail.com', 'Samid', 'smid', '004de5367c3bb44ec830528e94aef40e', '085182349234', 1);
 
 -- --------------------------------------------------------
 
@@ -133,7 +136,8 @@ INSERT INTO `tanggapan` (`id_tanggapan`, `id_pengaduan`, `tgl_tanggapan`, `tangg
 -- Indexes for table `masyarakat`
 --
 ALTER TABLE `masyarakat`
-  ADD PRIMARY KEY (`nik`);
+  ADD PRIMARY KEY (`nik`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- Indexes for table `pengaduan`
