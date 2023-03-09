@@ -71,7 +71,7 @@
                     class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
                     <img align="center" src="img/icon/login.png" alt="login" width="20px"> Masuk
                 </a>
-                <a href="reg.php"
+                <a href="daftar.php"
                     class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
                     <img align="center" src="img/icon/register.png" alt="register" width="20px"> Daftar
                 </a>

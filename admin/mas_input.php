@@ -5,7 +5,7 @@ include('../conn/koneksi.php');
     if(isset($_POST['input'])){
         $password = md5($_POST['password']);
 
-        $query=mysqli_query($koneksi,"INSERT INTO masyarakat VALUES ('".$_POST['nik']."','".$_POST['email']."','".$_POST['nama']."','".$_POST['username']."','".$password."','".$_POST['telp']."')");
+        $query=mysqli_query($koneksi,"INSERT INTO masyarakat VALUES ('".$_POST['nik']."','".$_POST['email']."','".$_POST['nama']."','".$_POST['username']."','".$password."','".$_POST['telp']."', 1)");
         if($query){
             echo "<script>alert('Data Ditambahkan')</script>";
             echo "<script>location='index.php?p=mas'</script>";
