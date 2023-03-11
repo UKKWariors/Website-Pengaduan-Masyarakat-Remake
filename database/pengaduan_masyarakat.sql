@@ -34,14 +34,14 @@ CREATE TABLE `masyarakat` (
   `username` varchar(25) NOT NULL,
   `password` varchar(255) NOT NULL,
   `telp` varchar(13) NOT NULL,
-  `status` int(11) NOT NULL
+  `verif` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `masyarakat`
 --
 
-INSERT INTO `masyarakat` (`nik`, `email`, `nama`, `username`, `password`, `telp`, `status`) VALUES
+INSERT INTO `masyarakat` (`nik`, `email`, `nama`, `username`, `password`, `telp`, `verif`) VALUES
 ('1231231231231231', 'mad@gmail.com', 'Mad', 'mad', '7538ebc37ad0917853e044b9b42bd8a4', '081234567891', 1),
 ('1376012310010005', 'aman@gmail.com', 'Aqil Rahman', 'masyarakat', 'd9a8c6c010a37fdc9850fe6d8c064880', '085364287180', 1),
 ('1421453264321642', 'bawahtangga4@gmail.com', 'Samid', 'dimas', '5a45b824c7b7803660b77dea0e1dacd2', '082301826966', 1),
