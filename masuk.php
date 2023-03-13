@@ -14,32 +14,37 @@
 		$cek2 = mysqli_num_rows($sql2);
 		$data2 = mysqli_fetch_assoc($sql2);
 
-		if($cek>0){
-			session_start();
-			$_SESSION['username']=$username;
-			$_SESSION['data']=$data;
-			$_SESSION['level']='masyarakat';
-			header('location:masyarakat/');
-		}
-		elseif($cek2>0){
-			if($data2['level']=="admin"){
-				session_start();
-				$_SESSION['username']=$username;
-				$_SESSION['data']=$data2;
-				header('location:admin/');
-			}
-			elseif($data2['level']=="petugas"){
-				session_start();
-				$_SESSION['username']=$username;
-				$_SESSION['data']=$data2;
-				header('location:petugas/');
-			}
-		}
+        if($cek>0){
+            if($data["verif"] == 0){
+                echo "<script>alert('Silahkan verifikasi akun anda terlebih dahulu!')</script>";
+                echo "<script>location='telat.php'</script>";
+            }
+            elseif($data["verif"] == 1){
+                session_start();
+                $_SESSION['username']=$username;
+                $_SESSION['data']=$data;
+                $_SESSION['level']='masyarakat';
+                header('location:masyarakat/');
+            }
+        elseif($cek2>0){
+            if($data2['level']=="admin"){
+                session_start();
+                $_SESSION['username']=$username;
+                $_SESSION['data']=$data2;
+                header('location:admin/');
+            }
+            elseif($data2['level']=="petugas"){
+                session_start();
+                $_SESSION['username']=$username;
+                $_SESSION['data']=$data2;
+                header('location:petugas/');
+            }
+        }
 		else{
 			echo "<script>alert('Gagal Login Sob')</script>";
 		}
-
 	}
+}
 ?>
 
 <!DOCTYPE html>

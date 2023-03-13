@@ -16,10 +16,10 @@ include('conn/koneksi.php');
             </script>
             <?php
         }else{
-            mysqli_query($koneksi, "UPDATE masyarakat SET status = 1 WHERE email = '$email'");
+            mysqli_query($koneksi, "UPDATE masyarakat SET verif = 1 WHERE email = '$email'");
             ?>
             <script>
-                    window.location.replace("./popup/daftar_berhasil.php");
+                    window.location.replace("cek.php");
             </script>
             <?php
         }

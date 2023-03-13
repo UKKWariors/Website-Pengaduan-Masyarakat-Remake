@@ -22,7 +22,7 @@
   <link href="css/remixicon.css" rel="stylesheet" />
 
   <!-- Boxicons -->
-  <link href="css/boxicons.min.css" rel="stylesheet" />
+  <link href="css/boxicons2.min.css" rel="stylesheet" />
 
   <!-- Drop Down Menu -->
   <link href="css/tailwind.min.css" rel="stylesheet">
@@ -45,39 +45,9 @@
   <!-- Navbar Section -->
   <header class="header-nav">
     <nav class="container">
-      <div class="container flex justify-center mx-auto">
-        <div x-data="{ open: false }" @mouseleave="open = false" class="relative">
-            <!-- Dropdown toggle button -->
-            <button @mouseover="open = true" class="flex items-center block p-2 bg-white bg-gray-100 rounded-md ">
-                <span class="mr-4">Masuk / Daftar</span>
-                <svg class="w-6 h-6 text-white text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                    fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                        clip-rule="evenodd" />
-                </svg>
-            </button>
-
-            <!-- Dropdown menu -->
-            <div x-show="open"
-                x-transition:enter="transition ease-out duration-300"
-                x-transition:enter-start="opacity-0 transform scale-180"
-                x-transition:enter-end="opacity-100 transform scale-100"
-                x-transition:leave="transition ease-in duration-300"
-                x-transition:leave-start="opacity-100 transform scale-100"
-                x-transition:leave-end="opacity-0 transform scale-180"
-            class="absolute right-0 w-48 py-2 mt-2 bg-gray-100 rounded-md shadow-xl">
-                <a href="cek.php"
-                    class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
-                    <img align="center" src="img/icon/login.png" alt="login" width="20px"> Masuk
-                </a>
-                <a href="daftar.php"
-                    class="block px-4 py-2 text-sm text-gray-300 text-gray-700 hover:bg-gray-400 hover:text-white">
-                    <img align="center" src="img/icon/register.png" alt="register" width="20px"> Daftar
-                </a>
-            </div>
-          </div>
-        </div>
+      <div class="container flex flex-wrap items-center justify-center mx-auto">
+        <a href='cek.php' class="btn-ghost">Masuk</a>
+        <a href='daftar.php' class="btn-ghost">Daftar</a>
         <!-- Nav Menu -->
         <div class="nav-menu">
           <ul class="nav-list">
@@ -182,19 +152,19 @@
             <div class="flex flex-wrap px-2 pb-5">
               <div class="w-5/2">
                 <div class="skill-list">
-                  <i class="bx bxl-html5 text-3xl text-[#E34F26]"></i>
+                  <i class="text-3xl text-[#E34F26]"></i>
                   <span class="skill-list-name">1. Input pengaduan anda dengan login website</span>
                 </div>
                 <div class="skill-list">
-                  <i class="bx bxl-css3 text-3xl text-[#1572B6]"></i>
+                  <i class="text-3xl text-[#1572B6]"></i>
                   <span class="skill-list-name">2. Pengaduan telah diterima dan diverifikasi</span>
                 </div>
                 <div class="skill-list">
-                  <i class="bx bxl-bootstrap text-3xl text-[#7952B3]"></i>
+                  <i class="text-3xl text-[#7952B3]"></i>
                   <span class="skill-list-name">3. Pengaduan akan didisposisi ke ODP terkait</span>
                 </div>
                 <div class="skill-list">
-                  <i class="bx bxl-tailwind-css text-3xl text-[#06B6D4]"></i>
+                  <i class="text-3xl text-[#06B6D4]"></i>
                   <span class="skill-list-name">4. Pengaduan akan ditindaklanjuti oleh ODP dan menjawab pengaduan masyarakat</span>
                 </div>
               </div>

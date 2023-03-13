@@ -11,27 +11,25 @@
         $password = $_POST["password"];
         $cpassword = $_POST["cpassword"];
 
-        $check_query = mysqli_query($koneksi, "SELECT * FROM masyarakat where email ='$email' OR username ='$username'");
+        $check_query = mysqli_query($koneksi, "SELECT * FROM masyarakat where email ='$email' OR username ='$username' OR nik ='$nik'");
         $rowCount = mysqli_num_rows($check_query);
 
         if(!empty($nik) && !empty($email) && !empty($nama) && !empty($username) && !empty($password) && !empty($cpassword) && !empty($telp)){
             if($password !== $cpassword){
-                ?>
-                <script>
-                    echo "<script>alert('Password Tidak Sama!')</script>";
-                </script>
-                <?php
+                echo "<script>alert('Password Tidak Sama!')</script>";
             }
-            if($rowCount > 0){
-                ?>
-                <script>
-                    echo "<script>alert('Akun dengan email / username tersebut sudah ada')</script>";
-                </script>
-                <?php
-            }else{
+            elseif(strlen($telp) < 10 || strlen($telp) > 13){
+                echo "<script>alert('Nomor telepon tidak boleh lebih dari 13 atau kurang dari 10!')</script>";
+            }
+            elseif(strlen($nik) !== 16){
+                echo "<script>alert('Nomor NIK harus 16 angka!')</script>";
+            }
+            elseif($rowCount > 0){
+                    echo "<script>alert('Akun dengan email, username, atau NIK tersebut sudah ada')</script>";
+                }else{
                 $password_hash = md5($_POST['password']);
 
-                $result = mysqli_query($koneksi, "INSERT INTO masyarakat (nik, email, nama, username, password, telp, status) VALUES ('$nik', '$email', '$nama', '$username', '$password_hash', '$telp',  0)");
+                $result = mysqli_query($koneksi, "INSERT INTO masyarakat (nik, email, nama, username, password, telp, verif) VALUES ('$nik', '$email', '$nama', '$username', '$password_hash', '$telp',  0)");
     
                 if($result){
                     $otp = rand(100000,999999);
@@ -54,18 +52,14 @@
     
                     $mail->isHTML(true);
                     $mail->Subject="Kode Verifikasi Akun Pelaporan Anda";
-                    $mail->Body="<p>Kepada $name, </p>
+                    $mail->Body="<p>Kepada $nama, </p>
                     <h3>Kode verifikasi akun anda adalah $otp <br></h3>
                     <br><br>
                     <p>Hormat kami</p>
                     <b>Pemerintah Kota Malang</b>";
     
                     if(!$mail->send()){
-                        ?>
-                            <script>
-                                echo "<script>alert('Alamat Email Tidak Valid!')</script>";
-                            </script>
-                        <?php
+                        echo "<script>alert('Alamat Email Tidak Valid!')</script>";
                     }else{
                         ?>
                         <script>
@@ -100,17 +94,17 @@
             <form action="#" method="POST" onsubmit="return verifyPassword()">
                 <h2>Daftar Masyarakat</h2>
                     <div class="inputBox">
-                        <input type="number" id="nik"  name="nik" required="required" pattern="{16}" title="Masukkan 16 nomor NIK anda" autocomplete="off">
+                        <input type="number" id="nik"  name="nik" required="required" minlength="16" maxlength="16" title="Masukkan 16 nomor NIK anda" autocomplete="off">
                         <span>NIK</span>
                         <i></i>
                     </div>
                     <div class="inputBox">
-                        <input type="name" id="name"  name="name" required="required" title="Masukkan maksimal 32 karakter" autocomplete="off">
+                        <input type="name" id="name"  name="name" required="required" maxlength="32" title="Masukkan maksimal 32 karakter" autocomplete="off">
                         <span>Nama Lengkap</span>
                         <i></i>
                     </div>
                     <div class="inputBox">
-                        <input type="name" id="username"  name="username" required="required" title="Masukkan maksimal 32 karakter" autocomplete="off">
+                        <input type="name" id="username"  name="username" required="required" maxlength="32" title="Masukkan maksimal 32 karakter" autocomplete="off">
                         <span>Nama Pengguna</span>
                         <i></i>
                     </div>
@@ -120,7 +114,7 @@
                         <i></i>
                     </div>
                     <div class="inputBox">
-                        <input type="password" id="password"  name="password" required="required" pattern="{8,}" title="Masukkan minimal 8 karakter" autocomplete="off">
+                        <input type="password" id="password"  name="password" required="required"  title="Masukkan minimal 8 karakter" autocomplete="off">
                         <span>Kata Sandi</span>
                         <i></i>
                     </div>
@@ -130,7 +124,7 @@
                         <i></i>
                     </div>
                     <div class="inputBox">
-                        <input type="number" id="telp"  name="telp" required="required" pattern=".{10,}" title="Masukkan minimal 10 nomor" autocomplete="off">
+                        <input type="number" id="telp"  name="telp" required="required" minlength="10" maxlength="13" title="Masukkan minimal 10 nomor" autocomplete="off">
                         <span>Nomor Telpon</span>
                         <i></i>
                     </div>
@@ -148,3 +142,18 @@
         </div>
     </div>
 </body>
+
+<script>
+    function validateEmail($email) {
+        $re = '/\S+@\S+\.\S+/';
+        return preg_match($re,$email);
+    }
+    function validateNIK($nik) {
+        $re = '/^\d{16}$/';
+        return preg_match($re, $nik);
+    }
+    funcion validatePhoneNumber($telp) {
+        $re = '/^\d{10,13}$/';
+        return preg_match($re, $telp);
+    }
+</script>
