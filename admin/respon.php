@@ -1,10 +1,4 @@
-        <div class="row">
-          <div class="col s12 m9">
-            <h3 class="orange-text">Respon</h3>
-          </div>
-        </div>
-
-        <table id="example" class="display responsive-table" style="width:100%">
+<table id="example" class="display responsive-table" style="width:100%">
           <thead>
               <tr>
 				<th>No</th>
@@ -56,6 +50,14 @@
 				<p><?php echo $r['isi_laporan']; ?></p>
 				<br><b>Respon</b>
 				<p><?php echo $r['tanggapan']; ?></p>
+				<br><b>Bukti</b><br>
+				<?php 
+					if($r['bukti']=="kosong"){ ?>
+						<img src="../img/noImage.png" width="100">
+				<?php	}else{ ?>
+					<img width="100" src="../img/<?php echo $r['bukti']; ?>">
+				<?php }
+				 ?>
             </div>
 
           </div>

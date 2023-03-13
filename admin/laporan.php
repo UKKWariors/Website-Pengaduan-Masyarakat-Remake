@@ -1,14 +1,4 @@
-        <div class="row">
-          <div class="col s12 m9">
-            <h3 class="orange-text">Laporan</h3>
-          </div> 
-          <div class="col s12 m3">
-            <div class="section"></div>
-            <a class="waves-effect waves-light btn blue" href="cetak.php"><i class="material-icons">print</i></a>
-          </div>
-        </div>
-
-        <table id="example" class="display responsive-table" style="width:100%">
+<table id="example" class="display responsive-table" style="width:100%">
           <thead>
               <tr>
 				<th>No</th>

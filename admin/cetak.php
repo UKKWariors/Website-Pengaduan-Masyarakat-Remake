@@ -1,3 +1,4 @@
+<div id="print">
 <h2 style="text-align: center;">Laporan Layanan Pengaduan Masyarakat</h2>
 <table border="2" style="width: 100%; height: 10%;">
 	<tr style="text-align: center;">
@@ -26,6 +27,7 @@
 	<?php	}
 	 ?>
 </table>
+</div>
 <script type="text/javascript">
 	window.print();
 </script>
