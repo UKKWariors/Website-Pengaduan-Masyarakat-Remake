@@ -13,6 +13,7 @@
               <tr>
 					<th>No</th>
 					<th>NIK</th>
+					<th>Email</th>
 					<th>Nama</th>
 					<th>Username</th>
 					<th>Telp</th>
@@ -22,12 +23,14 @@
           <tbody>
             
 	<?php 
+	
 		$no=1;
 		$query = mysqli_query($koneksi,"SELECT * FROM masyarakat ORDER BY nik ASC");
 		while ($r=mysqli_fetch_assoc($query)) { ?>
 		<tr>
 			<td><?php echo $no++; ?></td>
 			<td><?php echo $r['nik']; ?></td>
+			<td><?php echo $r['email']; ?></td>
 			<td><?php echo $r['nama']; ?></td>
 			<td><?php echo $r['username']; ?></td>
 			<td><?php echo $r['telp']; ?></td>
@@ -44,16 +47,20 @@
 					<input id="nik" type="number" name="nik" value="<?php echo $r['nik']; ?>">
 				</div>
 				<div class="col s12 input-field">
+					<label for="email">Email</label>		
+					<input id="email" type="text" name="email" value="<?php echo $r['email']; ?>">
+				</div>
+				<div class="col s12 input-field">
 					<label for="nama">Nama</label>
 					<input id="nama" type="text" name="nama" value="<?php echo $r['nama']; ?>">
 				</div>
 				<div class="col s12 input-field">
 					<label for="username">Username</label>		
-					<input id="username" type="text" name="username" value="<?php echo $r['username']; ?>"><br><br>
+					<input id="username" type="text" name="username" value="<?php echo $r['username']; ?>">
 				</div>
 				<div class="col s12 input-field">
 					<label for="telp">Telp</label>
-					<input id="telp" type="number" name="telp" value="<?php echo $r['telp']; ?>"><br><br>
+					<input id="telp" type="number" name="telp" value="<?php echo $r['telp']; ?>">
 				</div>
 				<div class="col s12 input-field">
 					<input type="submit" name="Update" value="Simpan" class="btn right">
@@ -62,7 +69,7 @@
 
 			<?php 
 				if(isset($_POST['Update'])){
-					$update=mysqli_query($koneksi,"UPDATE masyarakat SET nik='".$_POST['nik']."',nama='".$_POST['nama']."',username='".$_POST['username']."',telp='".$_POST['telp']."' WHERE nik='".$r['nik']."' ");
+					$update=mysqli_query($koneksi,"UPDATE masyarakat SET nik='".$_POST['nik']."',email='".$_POST['email']."',nama='".$_POST['nama']."',username='".$_POST['username']."',telp='".$_POST['telp']."' WHERE nik='".$r['nik']."' ");
 					if($update){
 						echo "<script>alert('Data Tersimpan')</script>";
 						echo "<script>location='location:index.php?p=registrasi';</script>";
@@ -90,7 +97,11 @@
 			<form method="POST">
 				<div class="col s12 input-field">
 					<label for="nik">NIK</label>
-					<input id="nik" type="number" name="nik">
+					<input id="nik" type="number" name="nik" pattern="{16}">
+				</div>
+				<div class="col s12 input-field">
+					<label for="email">Email</label>
+					<input id="email" type="text" name="email">
 				</div>
 				<div class="col s12 input-field">
 					<label for="nama">Nama</label>
@@ -117,7 +128,7 @@
 				if(isset($_POST['simpan'])){
 					$password = md5($_POST['password']);
 
-					$query=mysqli_query($koneksi,"INSERT INTO masyarakat VALUES ('".$_POST['nik']."','".$_POST['nama']."','".$_POST['username']."','".$password."','".$_POST['telp']."')");
+					$query=mysqli_query($koneksi,"INSERT INTO masyarakat VALUES ('".$_POST['nik']."','".$_POST['email']."','".$_POST['nama']."','".$_POST['username']."','".$password."','".$_POST['telp']."')");
 					if($query){
 						echo "<script>alert('Data Tesimpan')</script>";
 						echo "<script>location='location:index.php?p=registrasi';</script>";

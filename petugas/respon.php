@@ -1,10 +1,4 @@
-        <div class="row">
-          <div class="col s12 m9">
-            <h3 class="orange-text">Respon</h3>
-          </div>
-        </div>
-
-        <table id="example" class="display responsive-table" style="width:100%">
+<table id="example" class="display responsive-table" style="width:100%">
           <thead>
               <tr>
 				<th>No</th>
@@ -31,7 +25,7 @@
 			<td><?php echo $r['tgl_pengaduan']; ?></td>
 			<td><?php echo $r['tgl_tanggapan']; ?></td>
 			<td><?php echo $r['status']; ?></td>
-			<td><a class="btn blue modal-trigger" href="#more?id_tanggapan=<?php echo $r['id_tanggapan'] ?>">More</a> <a class="btn red" onclick="return confirm('Anda Yakin Ingin Menghapus Y/N')" href="index.php?p=tanggapan_hapus&id_tanggapan=<?php echo $r['id_tanggapan'] ?>">Hapus</a></td>
+			<td><a class="btn blue modal-trigger" href="#more?id_tanggapan=<?php echo $r['id_tanggapan'] ?>">More</a></td>
 		
 
 <!-- ------------------------------------------------------------------------------------------------------------------------------------ -->

@@ -12,6 +12,7 @@
           <thead>
               <tr>
 				<th>No</th>
+				<th>Email</th>
 				<th>Nama</th>
 				<th>Username</th>
 				<th>Telephone</th>
@@ -27,6 +28,7 @@
 		while ($r=mysqli_fetch_assoc($tampil)) { ?>
 		<tr>
 			<td><?php echo $no++; ?></td>
+			<td><?php echo $r['email']; ?></td>
 			<td><?php echo $r['nama_petugas']; ?></td>
 			<td><?php echo $r['username']; ?></td>
 			<td><?php echo $r['telp_petugas']; ?></td>
@@ -39,6 +41,10 @@
           <div class="modal-content">
             <h4>Edit</h4>
 			<form method="POST">
+			<div class="col s12 input-field">
+					<label for="email">Email</label>		
+					<input id="email" type="text" name="email" value="<?php echo $r['email']; ?>"><br><br>
+				</div>
 				<div class="col s12 input-field">
 					<label for="nama">Nama</label>
 					<input hidden type="text" name="id_petugas" value="<?php echo $r['id_petugas']; ?>">
@@ -72,10 +78,11 @@
 			<?php 
 				if(isset($_POST['Update'])){
 					// echo $_POST['nama'].$_POST['username'].$_POST['telp'].$_POST['level'];
-					$update=mysqli_query($koneksi,"UPDATE petugas SET nama_petugas='".$_POST['nama']."',username='".$_POST['username']."',telp_petugas='".$_POST['telp']."',level='".$_POST['level']."' WHERE id_petugas='".$_POST['id_petugas']."' ");
+					$update=mysqli_query($koneksi,"UPDATE petugas SET email='".$_POST['email']."',nama_petugas='".$_POST['nama']."',username='".$_POST['username']."',telp_petugas='".$_POST['telp']."',level='".$_POST['level']."' WHERE id_petugas='".$_POST['id_petugas']."' ");
 					if($update){
 						echo "<script>alert('Data di Update')</script>";
 						echo "<script>location='index.php?p=user'</script>";
+						echo "<script>location.reload()</script>";
 					}
 				}
 			 ?>
@@ -98,21 +105,25 @@
           <div class="modal-content">
             <h4>Add</h4>
 			<form method="POST">
+			<div class="col s12 input-field">
+					<label for="email">Email</label>
+					<input id="email" type="text" name="email">
+				</div>
 				<div class="col s12 input-field">
 					<label for="nama">Nama</label>
 					<input id="nama" type="text" name="nama">
 				</div>
 				<div class="col s12 input-field">
 					<label for="username">Username</label>		
-					<input id="username" type="text" name="username"><br><br>
+					<input id="username" type="text" name="username">
 				</div>
 				<div class="col s12 input-field">
 					<label for="password">Password</label>
-					<input id="password" type="password" name="password"><br><br>
+					<input id="password" type="password" name="password">
 				</div>
 				<div class="col s12 input-field">
 					<label for="telp">Telp</label>
-					<input id="telp" type="number" name="telp"><br><br>
+					<input id="telp" type="number" name="telp">
 				</div>
 
 				<div class="col s12 input-field">
@@ -131,10 +142,11 @@
 				if(isset($_POST['input'])){
 					$password = md5($_POST['password']);
 
-					$query=mysqli_query($koneksi,"INSERT INTO petugas VALUES (NULL,'".$_POST['nama']."','".$_POST['username']."','".$password."','".$_POST['telp']."','".$_POST['level']."')");
+					$query=mysqli_query($koneksi,"INSERT INTO petugas VALUES (NULL,'".$_POST['nama']."','".$_POST['email']."','".$_POST['username']."','".$password."','".$_POST['telp']."','".$_POST['level']."')");
 					if($query){
 						echo "<script>alert('Data Ditambahkan')</script>";
 						echo "<script>location='index.php?p=user'</script>";
+						echo "<script>location.reload()</script>";
 					}
 				}
 			 ?>

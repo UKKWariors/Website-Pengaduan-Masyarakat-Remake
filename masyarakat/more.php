@@ -7,6 +7,7 @@
 	$r=mysqli_fetch_assoc($query);
  ?>
 <b>Di Laporakan Pada : <?php echo $r['tgl_pengaduan']; ?></b><br>
+<p><?php echo $r['judul']; ?></p>
 
 <?php 
 	if($r['foto']=="kosong"){ ?>
@@ -28,7 +29,12 @@
 	$query = mysqli_query($koneksi,"SELECT * FROM pengaduan INNER JOIN masyarakat ON pengaduan.nik=masyarakat.nik INNER JOIN tanggapan ON pengaduan.id_pengaduan=tanggapan.id_pengaduan INNER JOIN petugas ON tanggapan.id_petugas=petugas.id_petugas WHERE tanggapan.id_pengaduan='".$_GET['id_pengaduan']."'");
 	$r=mysqli_fetch_assoc($query);
  ?>
-<h2>Petugas <?php echo $r['nama_petugas']; ?></h2>
+<h2>Petugas <?php echo $r['level']; 
+if ($level == admin) {
+	Admin;
+}else {
+	Petugas;
+}?></h2>
 <b>Ditanggapi pada :<?php echo $r['tgl_tanggapan']; ?></b><br>
 <?php 
 	if($r['foto']=="kosong"){ ?>
