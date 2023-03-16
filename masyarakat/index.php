@@ -8,6 +8,7 @@
 	elseif($_SESSION['level'] != "masyarakat"){
 		header('location:../index.php');
 	}
+	
  ?>
   <!DOCTYPE html>
   <html>
@@ -67,6 +68,15 @@
         </ul>
       </li>
       <li>
+          <a href="index.php?p=pengaduan">
+            <i class='bx bx-chat' ></i>
+            <span class="link_name">Laporan</span>
+          </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index.php?p=pengaduan">Laporan</a></li>
+		    </ul>
+      </li>
+      <li>
           <a href="index.php?p=lapor">
             <i class='bx bx-send' ></i>
             <span class="link_name">Laporkan</span>
@@ -75,23 +85,19 @@
           <li><a class="link_name" href="index.php?p=lapor">Laporkan</a></li>
 		</ul>
       </li>
+      <br>
+      <hr>
+      <br>
       <li>
-      <div class="profile-details">
-        <div class="profile-content">
-          <!--<img src="image/profile.jpg" alt="profileImg">-->
-        </div>
-        <div class="name-job">
-          <div class="profile_name"><?php echo ucwords($_SESSION['data']['nama']); ?></div>
-          <div class="job">Masyarakat</div>
-        </div>
-          <a href="../logout.php">
-              <i class='bx bx-log-out' ></i>
-          </a>
-          <ul class="sub-menu blank">
-            <li><a class="bxlink_name" href="../logout.php">Keluar</a></li>
-          </ul>
-      </div>
-  </li>
+        <a href="../logout.php">
+          <i class='bx bx-log-out'></i>
+            <p class="link_name">  <?php echo ucwords($_SESSION['data']['nama']); ?> </p>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="../logout.php">log out</a></li>
+        </ul>
+      </li>
+
 </ul>
   </div>
 
@@ -108,6 +114,9 @@
 		}
     elseif(@$_GET['p']=="lapor"){
 			include_once 'lapor.php';
+		}
+    elseif(@$_GET['p']=="pengaduan"){
+			include_once 'pengaduan.php';
 		}
 		elseif(@$_GET['p']=="pengaduan_hapus"){
 			$query=mysqli_query($koneksi,"SELECT * FROM pengaduan WHERE id_pengaduan='".$_GET['id_pengaduan']."'");

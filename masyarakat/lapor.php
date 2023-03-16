@@ -5,36 +5,39 @@
         $tgl = date('Y-m-d');
 		$no=1;
 		$pengaduan = mysqli_query($koneksi,"SELECT * FROM pengaduan INNER JOIN masyarakat ON pengaduan.nik=masyarakat.nik");
-		while ($r=mysqli_fetch_assoc($pengaduan)) { ?>
+		 { ?>
 
 <link rel="stylesheet" href="../css/daftar.css">
 
 
-    <section class="container">
+    <section class="container3">
         <form method="POST" enctype="multipart/form-data">
-        <div class="column">
-          <div class="input-box">
+          <div class="input-box" style="color: #fff;">
             <label for="nik">NIK</label>
-            <br><?php echo $r['nik']; ?>
+            <br><?php echo ucwords($_SESSION['data']['nik']); ?>
           </div>
-        </div>
 
-        <div class="input-box">
+        <div class="input-box" style="color: #fff;">
           <label for="nama">Nama</label>
-          <br><?php echo $r['nama']; ?>
+          <br><?php echo ucwords($_SESSION['data']['nama']); ?>
         </div>
 
-        <div class="input-box">
+        <div class="input-box" style="color: #fff;">
           <label for="tgl">Tanggal Pengaduan</label>
           <br><?php echo $tgl; ?>
         </div>
+		
+		<div class="input-box" style="color: #fff;">
+          <label for="judul">Judul Laporan</label>
+          <br><input type="textarea" name="judul">
+        </div>
 
-        <div class="input-box">
+        <div class="input-box" style="color: #fff;">
           <label for="laporan">Tulis Laporan</label>
           <br><input type="textarea" name="laporan">
         </div>
 
-        <div class="input-box">
+        <div class="input-box" style="color: #fff;">
             <label>Gambar</label>
 			<input type="file" name="foto"><br><br>
         </div>
@@ -63,11 +66,11 @@
 		 	if(in_array($eks, $listeks)){
 		 		if($size<=100000){
 					move_uploaded_file($source, $folder.$nama);
-					$query = mysqli_query($koneksi,"INSERT INTO pengaduan VALUES (NULL,'$tgl','$nik','".$_POST['laporan']."','$nama','proses')");
+					$query = mysqli_query($koneksi,"INSERT INTO pengaduan VALUES (NULL,'$tgl','$nik','".$_POST['judul']."','".$_POST['laporan']."','$nama','proses')");
 
 		 			if($query){
 			 			echo "<script>alert('Pengaduan Akan Segera di Proses')</script>";
-			 			echo "<script>location='index.php';</script>";
+			 			echo "<script>location='index.php?p=pengaduan';</script>";
 		 			}
 
 		 		}
@@ -80,10 +83,10 @@
 		 	}
 		}
 		else{
-			$query = mysqli_query($koneksi,"INSERT INTO pengaduan VALUES (NULL,'$tgl','$nik','".$_POST['laporan']."','noImage.png','proses')");
+			$query = mysqli_query($koneksi,"INSERT INTO pengaduan VALUES (NULL,'$tgl','$nik','".$_POST['judul']."','".$_POST['laporan']."','noImage.png','proses')");
 			if($query){
 			 	echo "<script>alert('Pengaduan Akan Segera Ditanggapi')</script>";
-	 			echo "<script>location='index.php';</script>";
+	 			echo "<script>location='index.php?p=pengaduan';</script>";
  			}
 		}
 	}
