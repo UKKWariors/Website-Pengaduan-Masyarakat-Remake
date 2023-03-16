@@ -44,8 +44,8 @@ session_start()
             $mail->SMTPSecure='tls';
 
             // h-hotel account
-            $mail->Username='sekolahkarijeneng@gmail.com';
-            $mail->Password='cphnjcbygasymxiy';
+            $mail->Username='YourEmail';
+            $mail->Password='YourEmailAppPassword';
 
             // send by h-hotel email
             $mail->setFrom('sekolahkarijeneng@gmail.com', 'noreply@sekolahkarijeneng.com');
