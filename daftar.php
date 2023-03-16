@@ -44,8 +44,8 @@
                     $mail->SMTPAuth=true;
                     $mail->SMTPSecure='tls';
     
-                    $mail->Username='sekolahkarijeneng@gmail.com';
-                    $mail->Password='cphnjcbygasymxiy';
+                    $mail->Username='YourEmail';
+                    $mail->Password='YourEmailAppPassword';
     
                     $mail->setFrom('pengaduanmalkot@gmail.com', 'noreply@malangkota.go.id');
                     $mail->addAddress($_POST["email"]);
