@@ -45,9 +45,22 @@
   <!-- Navbar Section -->
   <header class="header-nav">
     <nav class="container">
-      <div class="container flex flex-wrap items-center justify-center mx-auto">
-        <a href='cek.php' class="btn-ghost">Masuk</a>
-        <a href='daftar.php' class="btn-ghost">Daftar</a>
+      <div class="container flex items-center justify-between mx-auto">
+	<!-- Theme Change Button -->
+        <div class="flex">
+          <span class="mr-2 font-poppins text-sm text-primary">Mode</span>
+          <input type="checkbox" class="hidden" id="dark-toggle" />
+          <label for="dark-toggle">
+            <div class="flex h-5 w-10 cursor-pointer items-center rounded-full bg-slate-400 p-0.5">
+              <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300">
+                <span class="flex items-center justify-center text-base text-yellow-500 dark:text-darkTheme">
+                  <i class="bx bxs-sun" id="iconNow"></i>
+                </span>
+              </div>
+            </div>
+          </label>
+        </div>
+        <a href='cek.php' class="btn-ghost">Masuk / Daftar</a>
         <!-- Nav Menu -->
         <div class="nav-menu">
           <ul class="nav-list">
@@ -63,21 +76,6 @@
               <path d="M70 20C70 20 66 55.9999 46 56L94 55.9997C76 55.9998 70 20 70 20Z" />
             </svg>
           </ul>
-        </div>
-
-        <!-- Theme Change Button -->
-        <div class="flex">
-          <span class="mr-2 font-poppins text-sm text-primary">Mode</span>
-          <input type="checkbox" class="hidden" id="dark-toggle" />
-          <label for="dark-toggle">
-            <div class="flex h-5 w-10 cursor-pointer items-center rounded-full bg-slate-400 p-0.5">
-              <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300">
-                <span class="flex items-center justify-center text-base text-yellow-500 dark:text-darkTheme">
-                  <i class="bx bxs-sun" id="iconNow"></i>
-                </span>
-              </div>
-            </div>
-          </label>
         </div>
       </div>
     </nav>
