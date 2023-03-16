@@ -1,11 +1,13 @@
 <div id="print">
-<h2 style="text-align: center;">Laporan Layanan Pengaduan Masyarakat</h2>
-<table border="2" style="width: 100%; height: 10%;">
+<h2 style="text-align: center;color: #fff;">Laporan Layanan Pengaduan Masyarakat</h2>
+<table border="2" style="width: 90%; height: 10%; color: #fff; position:absolute;">
 	<tr style="text-align: center;">
 		<td>No</td>
 		<td>NIK Pelapor</td>
 		<td>Nama Pelapor</td>
 		<td>Nama Petugas</td>
+		<td>Foto</td>
+		<td>Bukti</td>
 		<td>Tanggal Masuk</td>
 		<td>Tanggal Ditanggapi</td>
 		<td>Status</td>
@@ -20,6 +22,20 @@
 			<td><?php echo $r['nik']; ?></td>
 			<td><?php echo $r['nama']; ?></td>
 			<td><?php echo $r['nama_petugas']; ?></td>
+			<td><?php 
+					if($r['foto']=="kosong"){ ?>
+						<img src="../img/noImage.png" width="100">
+				<?php	}else{ ?>
+					<img width="100" src="../img/<?php echo $r['foto']; ?>">
+				<?php }
+				 ?></td>
+			<td><?php 
+					if($r['bukti']=="kosong"){ ?>
+						<img src="../img/noImage.png" width="100">
+				<?php	}else{ ?>
+					<img width="100" src="../img/<?php echo $r['bukti']; ?>">
+				<?php }
+				 ?></td>
 			<td><?php echo $r['tgl_pengaduan']; ?></td>
 			<td><?php echo $r['tgl_tanggapan']; ?></td>
 			<td><?php echo $r['status']; ?></td>

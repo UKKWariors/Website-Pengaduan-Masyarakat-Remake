@@ -76,7 +76,7 @@
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Tambah User</a></li>
-          <li><a href="index.php?p=adm_input">Admin</a></li>
+          <li><a href="index.php?p=adm_input">Petugas</a></li>
           <li><a href="index.php?p=mas_input">Masyarakat</a></li>
         </ul>
       </li>
@@ -121,32 +121,21 @@
           <li><a class="link_name" href="index.php?p=cetak">Cetak Laporan</a></li>
         </ul>
       </li>
+      <br>
+      <hr>
+      <br>
       <li>
-        <a href="#">
-          <i class='bx bx-cog' ></i>
-          <span class="link_name">Setting</span>
+        <a href="../logout.php">
+          <i class='bx bx-log-out'></i>
+          <p class="link_name">  <?php echo ucwords($_SESSION['data']['nama_petugas']); ?> </p>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Setting</a></li>
+          <li><a class="link_name" href="../logout.php">log out</a></li>
         </ul>
       </li>
-      <li>
-      <div class="profile-details">
-        <div class="profile-content">
-          <!--<img src="image/profile.jpg" alt="profileImg">-->
-        </div>
-        <div class="name-job">
-          <div class="profile_name"><?php echo ucwords($_SESSION['data']['nama_petugas']); ?></div>
-          <div class="job"><?php echo ucwords($_SESSION['data']['level']); ?></div>
-        </div>
-          <a href="../logout.php">
-              <i class='bx bx-log-out' ></i>
-          </a>
-          <ul class="sub-menu blank">
-            <li><a class="bxlink_name" href="../logout.php">Keluar</a></li>
-          </ul>
-      </div>
-  </li>
+      
+     
+      
 </ul>
   </div>
   <section class="home-section">

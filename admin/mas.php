@@ -34,23 +34,23 @@
 			<form method="POST">
 				<div class="col s12 input-field">
 					<label for="nik">NIK</label>
-					<input id="nik" type="number" name="nik" value="<?php echo $r['nik']; ?>">
+					<input id="nik" type="number" name="nik" style="color: #000;" value="<?php echo $r['nik']; ?>">
 				</div>
 				<div class="col s12 input-field">
 					<label for="email">Email</label>		
-					<input id="email" type="text" name="email" value="<?php echo $r['email']; ?>">
+					<input id="email" type="text" name="email" style="color: #000;" value="<?php echo $r['email']; ?>">
 				</div>
 				<div class="col s12 input-field">
 					<label for="nama">Nama</label>
-					<input id="nama" type="text" name="nama" value="<?php echo $r['nama']; ?>">
+					<input id="nama" type="text" name="nama" style="color: #000;" value="<?php echo $r['nama']; ?>">
 				</div>
 				<div class="col s12 input-field">
 					<label for="username">Username</label>		
-					<input id="username" type="text" name="username" value="<?php echo $r['username']; ?>">
+					<input id="username" type="text" name="username" style="color: #000;" value="<?php echo $r['username']; ?>">
 				</div>
 				<div class="col s12 input-field">
 					<label for="telp">Telp</label>
-					<input id="telp" type="number" name="telp" value="<?php echo $r['telp']; ?>">
+					<input id="telp" type="number" name="telp" style="color: #000;" value="<?php echo $r['telp']; ?>">
 				</div>
 				<div class="col s12 input-field">
 					<input type="submit" name="Update" value="Simpan" class="btn right">
