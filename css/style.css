@@ -10,7 +10,7 @@
   left: 0;
   height: 100%;
   width: 280px;
-  background: #11101d;
+  background: #1c2536;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -208,10 +208,10 @@
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  background: #0b111e;
   height: 100vh;
   left: 280px;
-  width: calc(100% - 280px);
+  width: calc(100% - 60px);
   transition: all 0.5s ease;
 }
 .sidebar.close ~ .home-section{
@@ -226,7 +226,7 @@
 }
 .home-section .home-content .bx-menu,
 .home-section .home-content .text{
-  color: #11101d;
+  color: #fff;
   font-size: 35px;
 }
 .home-section .home-content .bx-menu{

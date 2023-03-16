@@ -8,7 +8,7 @@ include('../conn/koneksi.php');
         $query=mysqli_query($koneksi,"INSERT INTO petugas VALUES (NULL,'".$_POST['nama']."','".$_POST['email']."','".$_POST['username']."','".$password."','".$_POST['telp']."','".$_POST['level']."')");
         if($query){
             echo "<script>alert('Data Ditambahkan')</script>";
-            echo "<script>location='index.php?p=user'</script>";
+            echo "<script>location='index.php?p=adm'</script>";
             echo "<script>location.reload()</script>";
         }
     }
@@ -50,8 +50,6 @@ include('../conn/koneksi.php');
           <div class="column">
             <div class="select-box">
               <select class="default" name="level">
-                <option hidden>Level Petugas</option>
-                <option value="admin">Admin</option>
                 <option value="petugas">Petugas</option>
               </select>
             </div>
