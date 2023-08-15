@@ -5,6 +5,7 @@
 - [Cara Ngefork](#cara-ngefork)
 - [Cara Terbaik Buat Kontribusi](#cara-terbaik-buat-kontribusi)
 - [Caranya Buat Kontribusi](#caranya-buat-kontribusi)
+- [Total Kontribusi Member](#total-kontribusi-pada-proyek-ini)
 - [Struktur Organisasi UKKWarriors](#struktur-organisasi-ukkwarriors)
 
 # Status
@@ -72,6 +73,21 @@ Disini tempatnya projects UKK tentang `Pembuatan Website Pengaduan Masyarakat` b
 
 4. Done
 
+# Total Kontribusi Pada Proyek Ini
+```console
+@TheKingTermux : 25 project
+@VansDav : 9 projects
+@Akinazee : 6 projects
+@KenzienID : 5 projects
+@Keisukenimb : 4 projects
+@ckckckcz (solo) : 0 projects karena dia solo
+
+TOTAL PROJECTS : 36 Projects
+
+#NOTE : Data diatas tersebut merupakan jumlah data gabungan
+#CONTOH : 1 projects bisa dilakukan oleh lebih dari 1 orang, bisa dilihat disini (https://github.com/UKKWariors/Website-Pengaduan-Masyarakat-Remake/issues/4)
+```
+
 # Struktur Organisasi UKKWarriors
 
 ```console
@@ -79,31 +95,32 @@ CEO (@Akinazee)
 ├── Chief Officer
 │   └── @Keisukenimb
 │        └── Projects Manager
-│             └── @Keisukenimb @ckckckcz @Akinazee @VansDav
+│             └── @Keisukenimb @ckckckcz (solo) @Akinazee @VansDav
 │                  └── Division
 │                       ├── UI / UX Editor
-│                       │   └── @VansDav
+│                       │   └── @TheKingTermux @VansDav
 │                       ├── Database Mastering
-│                       │   └── @KenzienID
+│                       │   └── @TheKingTermux @KenzienID
 │                       ├── Main Idea
 │                       │   └── @TheKingTermux @KenzienID
 │                       ├── Website Remaker
-│                       │   └── @Akinazee @VansDav
+│                       │   └── @TheKingTermux @Akinazee @VansDav
 │                       ├── Website Development 
-│                       │   └── @ckckckcz @Akinazee
+│                       │   └── @TheKingTermux @ckckckcz (solo) @Akinazee
 │                       ├── Help Desk
-│                       │   └── @ckckckcz @TheKingTermux @VansDav
+│                       │   └── @ckckckcz (solo) @TheKingTermux @VansDav
 │                       ├── Security
-│                       │   └── @ckckckcz @KenzienID 
+│                       │   └── @TheKingTermux @ckckckcz (solo) @KenzienID 
 │                       ├── Debugging
-│                       │   └── @ckckckcz @TheKingTermux @KenzienID
+│                       │   └── @ckckckcz (solo) @TheKingTermux @KenzienID
 │                       └── Alpha Tester 
-│                            └── @TheKingTermux @KenzienID @ckckckcz
+│                            └── @TheKingTermux @KenzienID @ckckckcz (solo)
 │                                 └── Beta Tester 
 │                                      └── @TheKingTermux @KenzienID @Keisukenimb
 │                                           └── ACC Projects                           
 └────────── CEO  Approval ──────────┘
                         ││
                    Projects Done
-#NOTE: Struktur dapat berubah sewaktu - waktu 
+#NOTE 1: Struktur dapat berubah sewaktu - waktu
+#NOTE 2 : Jika ada tambahan (solo) di belakang @nama, maka artinya dia itu buat web sendiri
 ```
