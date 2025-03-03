@@ -1,6 +1,6 @@
 <?php 
 
-    include('.../conn/koneksi.php');
+    include('../conn/conn.php');
 
         $tgl = date('Y-m-d');
 		$no=1;
